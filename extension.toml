@@ -1,0 +1,7 @@
+id = "liquid"
+name = "Liquid"
+version = "0.0.1"
+schema_version = 1
+authors = ["Jeffrey Guenther <guenther.jeffrey@gmail.com>"]
+description = "Shopify Liquid support"
+repository = "https://github.com/TheBeyondGroup/zed-shopify-liquid"
