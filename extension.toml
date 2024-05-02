@@ -5,3 +5,7 @@ schema_version = 1
 authors = ["Jeffrey Guenther <guenther.jeffrey@gmail.com>"]
 description = "Shopify Liquid support"
 repository = "https://github.com/TheBeyondGroup/zed-shopify-liquid"
+
+[grammars.liquid]
+repository = "https://github.com/hankthetank27/tree-sitter-liquid"
+commit = "293369818da219d97327908aab33707b04b63fd9"
