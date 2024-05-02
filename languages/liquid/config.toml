@@ -1,0 +1,5 @@
+name = "Liquid"
+grammar = "liquid"
+path_suffixes = ["liquid"]
+
+block_comment = ["{% comment %}", "{% endcomment %}"]
