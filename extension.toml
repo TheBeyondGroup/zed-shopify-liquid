@@ -6,6 +6,11 @@ authors = ["Jeffrey Guenther <guenther.jeffrey@gmail.com>"]
 description = "Shopify Liquid support"
 repository = "https://github.com/TheBeyondGroup/zed-shopify-liquid"
 
+[language_servers.liquid]
+name = "Liquid LSP"
+language = "Liquid"
+languages = ["Liquid"]
+
 [grammars.liquid]
 repository = "https://github.com/hankthetank27/tree-sitter-liquid"
 commit = "293369818da219d97327908aab33707b04b63fd9"
