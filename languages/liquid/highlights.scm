@@ -1,23 +1,31 @@
-((comment) @comment @spell)
+((comment) @comment @spell
+  (#set! priority 110))
 
 (raw_statement
-  (raw_content) @spell)
+  (raw_content) @spell
+  (#set! priority 110))
 
-((identifier) @variable)
+((identifier) @variable
+  (#set! priority 110))
 
-((string) @string)
+((string) @string
+  (#set! priority 110))
 
-((boolean) @boolean)
+((boolean) @boolean
+  (#set! priority 110))
 
-((number) @number)
+((number) @number
+  (#set! priority 110))
 
 (filter
-  name: (identifier) @function.special)
+  name: (identifier) @function.call
+  (#set! priority 110))
 
 ([
   "as"
   "assign"
   "capture"
+  (custom_unpaired_statement)
   "decrement"
   "echo"
   "endcapture"
@@ -35,7 +43,8 @@
   "schema"
   "style"
   "with"
-] @keyword)
+] @keyword
+  (#set! priority 110))
 
 ([
   "case"
@@ -47,12 +56,13 @@
   "if"
   "unless"
   "when"
-] @keyword.conditional)
+] @keyword.conditional
+  (#set! priority 110))
 
 ([
-  "break"
+  (break_statement)
+  (continue_statement)
   "by"
-  "continue"
   "cycle"
   "endfor"
   "endpaginate"
@@ -60,14 +70,16 @@
   "for"
   "paginate"
   "tablerow"
-] @keyword.repeat)
+] @keyword.repeat
+  (#set! priority 110))
 
 ([
   "and"
   "contains"
   "in"
   "or"
-] @keyword.operator)
+] @keyword.operator
+  (#set! priority 110))
 
 ([
   "{{"
@@ -78,10 +90,12 @@
   "%}"
   "{%-"
   "-%}"
-] @tag.delimiter)
+] @tag.delimiter
+  (#set! priority 110))
 
 [
   "include"
+  "include_relative"
   "render"
   "section"
   "sections"
