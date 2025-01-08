@@ -14,6 +14,18 @@ contributions are welcome!
 >
 > How to deal with this will come in the future.
 
+## Configure Prettier formatting
+``` json
+"languages": {
+  "Liquid": {
+    "prettier": {
+      "allowed": true,
+      "plugins": ["@shopify/prettier-plugin-liquid"]
+    }
+  }
+}
+```
+
 ## Credits
 
 This extension uses [grammar](https://github.com/hankthetank27/tree-sitter-liquid) and queries from [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter/tree/master/queries/liquid)
