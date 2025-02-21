@@ -8,7 +8,7 @@ repository = "https://github.com/TheBeyondGroup/zed-shopify-liquid"
 
 [grammars.liquid]
 repository = "https://github.com/hankthetank27/tree-sitter-liquid"
-commit = "23ac814111e2b4b4b083e2c92219af2d5b74d13d"
+commit = "d68a255c393cfefa9d3185023e2f1684a52907ed"
 
 [language_servers.liquid]
 name = "Liquid LSP"
