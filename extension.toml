@@ -1,6 +1,6 @@
 id = "liquid"
 name = "Liquid"
-version = "0.1.0"
+version = "0.2.0"
 schema_version = 1
 authors = ["Jeffrey Guenther <guenther.jeffrey@gmail.com>"]
 description = "Shopify Liquid support"
