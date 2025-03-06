@@ -14,14 +14,27 @@ contributions are welcome!
 >
 > How to deal with this will come in the future.
 
-## Configure Prettier formatting
+## Configure Prettier formatting and Tailwind LSP
 ``` json
+"lsp": {
+  "tailwindcss-language-server": {
+    "settings": {
+      "includeLanguages": {
+        "liquid": "html"
+      }
+    }
+  }
+},
 "languages": {
   "Liquid": {
     "prettier": {
       "allowed": true,
-      "plugins": ["@shopify/prettier-plugin-liquid"]
-    }
+      "plugins": [
+        "@shopify/prettier-plugin-liquid",
+        "prettier-plugin-tailwindcss"
+      ]
+    },
+    "language_servers": ["tailwindcss-language-server", "..."]
   }
 }
 ```
