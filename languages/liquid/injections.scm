@@ -17,5 +17,8 @@
   (#set! "language" "css")
   (#set! "combined"))
 
+((front_matter) @content
+  (#set! "language" "yaml"))
+
 ((comment) @content
   (#set! "language" "comment"))
