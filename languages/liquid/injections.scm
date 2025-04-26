@@ -9,8 +9,7 @@
 
 (schema_statement
   (json_content) @content
-  (#set! "language" "json")
-  (#set! "combined"))
+  (#set! "language" "json"))
 
 (style_statement
   (style_content) @content
