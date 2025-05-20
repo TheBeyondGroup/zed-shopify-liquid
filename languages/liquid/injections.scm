@@ -1,20 +1,20 @@
-((template_content) @injection.content
+((template_content)+ @injection.content
   (#set! injection.language "html"))
 
 (javascript_statement
-  (js_content) @injection.content
+  (js_content)+ @injection.content
   (#set! injection.language "javascript"))
 
 (schema_statement
-  (json_content) @injection.content
+  (json_content)+ @injection.content
   (#set! injection.language "json"))
 
 (style_statement
-  (style_content) @injection.content
+  (style_content)+ @injection.content
   (#set! injection.language "css"))
 
-((front_matter) @injection.content
+((front_matter)+ @injection.content
   (#set! injection.language "yaml"))
 
-((comment) @injection.content
+((comment)+ @injection.content
   (#set! injection.language "comment"))
