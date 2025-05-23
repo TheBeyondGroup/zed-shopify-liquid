@@ -1,24 +1,24 @@
-((template_content) @content
-  (#set! "language" "html")
-  (#set! "combined"))
+((template_content) @injection.content
+  (#set! injection.language "html")
+  (#set! injection.combined))
 
 (javascript_statement
-  (js_content) @content
-  (#set! "language" "javascript")
-  (#set! "combined"))
+  (js_content) @injection.content
+  (#set! injection.language "javascript")
+  (#set! injection.combined))
 
 (schema_statement
-  (json_content) @content
-  (#set! "language" "json")
-  (#set! "combined"))
+  (json_content) @injection.content
+  (#set! injection.language "json")
+  (#set! injection.combined))
 
 (style_statement
-  (style_content) @content
-  (#set! "language" "css")
-  (#set! "combined"))
+  (style_content) @injection.content
+  (#set! injection.language "css")
+  (#set! injection.combined))
 
-((front_matter) @content
-  (#set! "language" "yaml"))
+((front_matter) @injection.content
+  (#set! injection.language "yaml"))
 
-((comment) @content
-  (#set! "language" "comment"))
+((comment) @injection.content
+  (#set! injection.language "comment"))
