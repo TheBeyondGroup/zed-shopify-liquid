@@ -1,5 +1,11 @@
 name = "Liquid"
 grammar = "liquid"
 path_suffixes = ["liquid"]
-
+brackets = [
+    { start = "{{", end = "}}", close = true, newline = false },
+    { start = "{{-", end = "-}}", close = true, newline = false },
+    { start = "{%", end = "%}", close = true, newline = false },
+    { start = "{%-", end = "-%}", close = true, newline = false },
+]
 block_comment = ["{% comment %}", "{% endcomment %}"]
+documentation = { start = "{% doc %}", end = "{% enddoc %}", prefix = " ", tab_size = 1 }
