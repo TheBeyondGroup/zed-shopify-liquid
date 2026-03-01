@@ -34,6 +34,7 @@
   "endraw"
   "endschema"
   "endstyle"
+  "endstylesheet"
   "form"
   "increment"
   "javascript"
@@ -42,6 +43,7 @@
   "raw"
   "schema"
   "style"
+  "stylesheet"
   "with"
 ] @keyword
   (#set! priority 110))
