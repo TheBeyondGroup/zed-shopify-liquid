@@ -7,9 +7,22 @@ struct LiquidExtension {
 }
 
 const SERVER_PATH: &str = "node_modules/@shopify/cli/bin/run.js";
+const PROXY_PATH: &str = "lsp-proxy.js";
 const PACKAGE_NAME: &str = "@shopify/cli";
+const PROXY_SCRIPT: &str = include_str!("../lsp-proxy.js");
 
 impl LiquidExtension {
+    fn ensure_proxy_script(&self) -> Result<()> {
+        match fs::read_to_string(PROXY_PATH) {
+            Ok(existing) if existing == PROXY_SCRIPT => Ok(()),
+            _ => {
+                fs::write(PROXY_PATH, PROXY_SCRIPT)
+                    .map_err(|error| format!("failed to write '{PROXY_PATH}': {error}"))?;
+                Ok(())
+            }
+        }
+    }
+
     fn server_exists(&self) -> bool {
         fs::metadata(SERVER_PATH).map_or(false, |stat| stat.is_file())
     }
@@ -67,17 +80,14 @@ impl zed::Extension for LiquidExtension {
         language_server_id: &zed::LanguageServerId,
         _worktree: &zed::Worktree,
     ) -> Result<zed::Command> {
+        self.ensure_proxy_script()?;
         let server_path = self.server_script_path(language_server_id)?;
+        let cwd = env::current_dir().unwrap();
         Ok(zed::Command {
             command: zed::node_binary_path()?,
             args: vec![
-                env::current_dir()
-                    .unwrap()
-                    .join(&server_path)
-                    .to_string_lossy()
-                    .to_string(),
-                "theme".to_string(),
-                "language-server".to_string(),
+                cwd.join(PROXY_PATH).to_string_lossy().to_string(),
+                cwd.join(&server_path).to_string_lossy().to_string(),
             ],
             env: Default::default(),
         })
