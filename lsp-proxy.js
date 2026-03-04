@@ -3,15 +3,19 @@
 
 const { spawn } = require("child_process");
 
-const shopifyRunJsPath = process.argv[2];
-if (!shopifyRunJsPath) {
-  process.stderr.write("Missing Shopify CLI run.js path.\n");
+const themeLanguageServerModulePath = process.argv[2];
+if (!themeLanguageServerModulePath) {
+  process.stderr.write("Missing Shopify theme language server module path.\n");
   process.exit(1);
 }
 
 const child = spawn(
   process.execPath,
-  [shopifyRunJsPath, "theme", "language-server"],
+  [
+    "-e",
+    "require(process.argv[1]).startServer()",
+    themeLanguageServerModulePath,
+  ],
   {
     stdio: ["pipe", "pipe", "inherit"],
     env: process.env,

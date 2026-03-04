@@ -1,6 +1,7 @@
 # Shopify Liquid Extension for Zed
 
 This extension adds syntax highlighting for Liquid to Zed.
+Language intelligence is powered by [`@shopify/theme-language-server-node`](https://github.com/Shopify/theme-tools).
 
 More work is needed to bring this extension in line with vscode plugin, so
 contributions are welcome!

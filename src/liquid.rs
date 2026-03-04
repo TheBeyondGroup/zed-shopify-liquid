@@ -6,9 +6,9 @@ struct LiquidExtension {
     did_find_server: bool,
 }
 
-const SERVER_PATH: &str = "node_modules/@shopify/cli/bin/run.js";
+const SERVER_PATH: &str = "node_modules/@shopify/theme-language-server-node/dist/index.js";
 const PROXY_PATH: &str = "lsp-proxy.js";
-const PACKAGE_NAME: &str = "@shopify/cli";
+const PACKAGE_NAME: &str = "@shopify/theme-language-server-node";
 const PROXY_SCRIPT: &str = include_str!("../lsp-proxy.js");
 
 impl LiquidExtension {
