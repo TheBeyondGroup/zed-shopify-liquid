@@ -5,6 +5,10 @@
   (raw_content) @spell
   (#set! priority 110))
 
+(argument
+  key: (identifier) @variable.parameter
+  (#set! priority 111))
+
 ((identifier) @variable
   (#set! priority 110))
 
@@ -92,7 +96,7 @@
   "%}"
   "{%-"
   "-%}"
-] @tag.delimiter
+] @punctuation.special
   (#set! priority 110))
 
 [
