@@ -25,5 +25,7 @@
 ((front_matter) @injection.content
   (#set! injection.language "yaml"))
 
-((comment) @injection.content
-  (#set! injection.language "comment"))
+(doc_example_annotation
+  (doc_example_content) @injection.content
+  (#set! injection.language "liquid"))
+
