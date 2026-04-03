@@ -7,8 +7,8 @@ description = "Shopify Liquid support"
 repository = "https://github.com/TheBeyondGroup/zed-shopify-liquid"
 
 [grammars.liquid]
-repository = "https://github.com/RomainDW/tree-sitter-liquid-1"
-commit = "a88667733beca52f5ff3db69c08f033a2a9318c3"
+repository = "https://github.com/hankthetank27/tree-sitter-liquid"
+commit = "e45dbac8c5fa95b1f0e00e7e0c04bc8855823391"
 
 [language_servers.liquid]
 name = "Liquid LSP"
