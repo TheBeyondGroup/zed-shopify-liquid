@@ -1,11 +1,31 @@
 name = "Liquid"
 grammar = "liquid"
 path_suffixes = ["liquid"]
-brackets = [
-    { start = "{{", end = "}}", close = true, newline = false },
-    { start = "{{-", end = "-}}", close = true, newline = false },
-    { start = "{%", end = "%}", close = true, newline = false },
-    { start = "{%-", end = "-%}", close = true, newline = false },
-]
 block_comment = ["{% comment %}", "{% endcomment %}"]
 documentation = { start = "{% doc %}", end = "{% enddoc %}", prefix = " ", tab_size = 1 }
+tab_size = 2
+hard_tabs = false
+autoclose_before = "%-:.,=}])<>'\"` \n\t"
+word_characters = ["-", "_"]
+
+brackets = [
+    # Space-padded variants: typing space after a delimiter auto-closes
+    # with inner padding, e.g. `{{|}}` + space produces `{{ | }}`.
+    { start = "{{ ", end = " }}", close = true, newline = false },
+    { start = "{% ", end = " %}", close = true, newline = false },
+    { start = "{{- ", end = " -}}", close = true, newline = false },
+    { start = "{%- ", end = " -%}", close = true, newline = false },
+    # Whitespace-trimming variants
+    { start = "{{-", end = "-}}", close = true, newline = false },
+    { start = "{%-", end = "-%}", close = true, newline = false },
+    # Base Liquid delimiters
+    { start = "{{", end = "}}", close = true, newline = false },
+    { start = "{%", end = "%}", close = true, newline = false },
+    # Standard brackets
+    { start = "{", end = "}", close = true, newline = true },
+    { start = "[", end = "]", close = true, newline = true },
+    { start = "(", end = ")", close = true, newline = true },
+    { start = "<", end = ">", close = true, newline = false },
+    { start = "\"", end = "\"", close = true, newline = false, not_in = ["string", "comment"] },
+    { start = "'", end = "'", close = true, newline = false, not_in = ["string", "comment"] },
+]
